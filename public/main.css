@@ -1,0 +1,42 @@
+
+.NameHigh{
+    font-family: 'Courgette', cursive;
+}
+.Logoimg{
+    height:40px;
+    width:40px;
+}
+.he1{
+ height:500px;
+}
+
+
+.contain{
+    width: 100%;
+    margin:;
+    columns: 4;
+    column-gap: 10px;
+}
+
+.contain .box {
+    width: 100%;
+    break-inside: avoid;
+    /margin-top: 10px;
+     margin-bottom: 10px; 
+}
+
+@media (max-width: 960px){
+.contain{
+    columns:3;
+}
+}
+@media (max-width: 768px){
+    .contain{
+        columns:2;
+    }
+    }
+@media (max-width: 548px){
+        .contain{
+            columns:1;
+}
+}
