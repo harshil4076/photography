@@ -10,6 +10,9 @@ app.use(express.static(__dirname + "/public"));
 app.get("/", function(req, res){
     res.render("landing.ejs")
 });
+app.get("/contact", function(req, res){
+    res.render("contact.ejs")
+});
 
 var port = process.env.PORT || 3000;
 app.listen(port, process.env.IP, function(){
