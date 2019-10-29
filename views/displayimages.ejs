@@ -1,0 +1,25 @@
+<% include partials/auth %>
+
+<div class="row displayimages d-flex justify-content-around">
+        <% images.forEach(function(image){ %>
+                <div class="col-md-3 col-sm-3 mx-3 my-3">
+                        <a href="/displayimages/<%= image.id %>">
+                        <img class= "imgadmin" src="<%= image.image %>">
+                        </a>
+                        <ul class="py-2 deletimgbtn">
+                                <li>
+                                <form action="/displayimages/<%=image.id%>?_method=DELETE" method="POST">
+                                <button class="btn btn-danger">Delete</button>
+                                </form>
+                                </li>
+                        </ul>
+                        
+                </div>
+                
+         <% }) %>  
+        
+</div>
+    
+
+
+<% include partials/footer %>

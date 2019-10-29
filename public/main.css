@@ -15,12 +15,17 @@ body{
  height:500px;
 }
 
-
+.navbar.scrolled {
+	background: rgb(248, 246, 247);
+    transition: background 1s;
+    opacity: 0.9;
+}
 .contain{
     width: 100%;
     margin:;
     columns: 4;
     column-gap: 10px;
+    float:left;
 }
 
 .contain .box {
@@ -28,6 +33,25 @@ body{
     break-inside: avoid;
     /* margin-top: 10px; */
      margin-bottom: 10px; 
+}
+.img-wrapper{
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 430px;
+}
+.imgadmin{
+    height:400px;
+    width:400px;
+    break-inside: avoid;
+
+}
+.displayimages{
+    display:flex;
+     flex-wrap: wrap;
+}
+.openimage{
+    width:800px;
+    height: 600px;
 }
 
 @media (max-width: 960px){
@@ -79,4 +103,7 @@ text-align: left;
 .Highlight{
     color:#1d1d1f;
     font-weight: Bold;
+}
+.deletimgbtn{
+    list-style: none;
 }

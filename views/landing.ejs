@@ -1,23 +1,10 @@
 <% include partials/header %>
       <div class="contain">
+          <% images.forEach(function(image){ %>
           <div class="box">
-            <img class= "img-fluid" src="https://images.unsplash.com/photo-1571842834860-82f303b665a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80">
+            <img class= "img-fluid" src="<%= image.image %>">
           </div>
-          <div class="box">
-            <img class="img-fluid" src="https://images.unsplash.com/flagged/photo-1571837618825-435825e8ea4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80">
-          </div>
-          <div class="box">
-                <img class="img-fluid" src="https://images.unsplash.com/flagged/photo-1571839704111-648eaa3f5f00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80">
-              </div>
-            <div class="box">
-                <img class="img-fluid" src="https://images.unsplash.com/photo-1571841442993-4fe5ddec91ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80">
-                </div>
-            <div class="box">
-                <img class="img-fluid" src="https://images.unsplash.com/photo-1562887085-cb16e9116582?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80">
-                </div>
-            <div class="box">
-                <img class="img-fluid" src="https://images.unsplash.com/flagged/photo-1571839704111-648eaa3f5f00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80">
-                </div>  
+          <% }) %>  
 
       </div>
       
