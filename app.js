@@ -53,20 +53,20 @@ app.get("/contact", function(req, res){
 app.get("/register", function(req, res){
     res.render("register.ejs")
 });
-//
-// app.post("/register", function(req, res){
-//     var newUser = new User({username: req.body.username});
-//     User.register(newUser, req.body.password, function(err, user){
-//         if(err){
-//             console.log(err);
-//         }
-//         passport.authenticate("local")(req, res, function(){
-//             console.log(user.username);
-//             res.redirect("/admin");
-//         });
 
-//     });
-// });
+app.post("/register", function(req, res){
+    var newUser = new User({username: req.body.username});
+    User.register(newUser, req.body.password, function(err, user){
+        if(err){
+            console.log(err);
+        }
+        passport.authenticate("local")(req, res, function(){
+            console.log(user.username);
+            res.redirect("/admin");
+        });
+
+    });
+});
 
 //auth login logic
 app.get("/login", function(req, res){
