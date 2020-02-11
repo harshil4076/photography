@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express")
 const app = express();
-
 const path = require('path');
 
 app.use(express.static(path.join(__dirname, '/client/build')));
@@ -12,7 +11,7 @@ app.get('/', function(req, res) {
 
 
 var port = process.env.PORT || 3001;
-http.listen(port, process.env.IP, function(){
+app.listen(port, process.env.IP, function(){
 
 	console.log("Photography has started" + port);
 })
