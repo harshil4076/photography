@@ -5,6 +5,7 @@ import io from 'socket.io-client';
 import { Widget, addResponseMessage, addUserMessage } from 'react-chat-widget';
 import 'react-chat-widget/lib/styles.css';
 
+let socket;
 const useStyles = makeStyles(theme => ({
     root: {
       position: 'fixed',
@@ -19,19 +20,23 @@ const useStyles = makeStyles(theme => ({
 const Chat = () => {
     const classes = useStyles();
     const [message , setMessage] = useState();
+    socket = io("http://localhost:3001");
+   useEffect(() => {
+    socket.emit('join', message);
+
+   });
     useEffect(() => {
-        // let socket = io.connect("http://localhost:3001");
-        
-        // console.log(socket)
-        // socket.on('chat-message', data => {
-        //     addUserMessage(data)
-        // } )
-        // socket.emit('send-chat-message', message)
-      
+        socket.on('chat-join', data => {
+           if(data === null){
+            addResponseMessage("Welcome")
+           } else{
+               addResponseMessage(`${data}`)
+           }
+        });
     }, [message]);
-    const handleNewUserMessage =(newMessage) =>{
+    const handleNewUserMessage = (newMessage) =>{
         setMessage(newMessage);
-    }
+        }
     return (
         <div >
            <Widget handleNewUserMessage={handleNewUserMessage} /> 

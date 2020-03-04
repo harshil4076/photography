@@ -12,7 +12,7 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import Home from './Home';
 import Aboutme from './Aboutme'
 import { Switch, Route, Link } from 'react-router-dom';
-import Contact from './Contact';
+import Contact from './Contact'
 
 const useStyles = makeStyles(theme => ({
   root: {
